@@ -26,7 +26,7 @@ function getCurrentPage(slug) {
 // parameter and add it to the `choiceList` Array (probably using `push()`).
 function recordChoice(slug) {
     choiceList.push(slug);
-    console.log('Added ${slug}')
+    console.log('Added to choices array ${slug}')
 }
 
 
@@ -35,6 +35,9 @@ function recordChoice(slug) {
 // `choiceList` Array.
 function undoChoice() {
     choiceList.pop();
+    if (choiceList.length === 0) {
+        choiceList.push('p1');
+    }
     console.log('Push adds to end of list. Pop removes it. creating the undo function here')
     return choiceList[choiceList.length -1];
 }
